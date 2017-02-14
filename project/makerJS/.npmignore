@@ -1,0 +1,17 @@
+.npmignore
+node_modules/
+archive/*
+debug/*
+demos/*
+docgen/*
+docs/*
+examples/*
+external/*
+fonts/*
+playground/*
+src/*
+target/*
+test/*
+typings/*
+tsconfig.json
+tsd.json

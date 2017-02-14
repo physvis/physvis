@@ -1,0 +1,368 @@
+html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    -webkit-user-select: none; /* Chrome/Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+    cursor: default;
+}
+
+body {
+    height: 100%;
+    padding: 0;
+    overflow: auto;
+    margin: 0;
+    -webkit-overflow-scrolling: touch;
+
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+table, th, td {
+    border: 1px solid #646464;
+    border-collapse: collapse;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+table{
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+td {
+    padding-left: 5px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    padding-right: 5px;
+}
+
+.contentText p.noJS{
+    color: #ff7d54;
+}
+
+#mainContainer{
+    position: absolute;
+    height:100%;
+    width: 100%;
+    background-color: #ffffff;
+    overflow: auto;
+}
+
+/* SIDEBAR STYLING */
+
+/*
+#logo{
+    position: relative;
+    margin-left: 29px;
+    margin-top: 30px;
+    margin-bottom: -30px;
+    height: 100px;
+    width: 100px;
+    background-image: url("logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+*/
+
+
+#sideBar{
+    position: fixed;
+    z-index: 1;
+    height: 100%;
+    width: 200px;
+    background-color: white;
+    /*
+    background-color: #f4f4f4;
+    border: 1px solid #ebebeb;
+    */
+    overflow: auto;
+}
+
+#header{
+    position: relative;
+    margin-left: 20px;
+}
+
+#main-header{
+
+    margin: 0;
+    margin-top: 25px;
+    margin-left: 27px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 2rem;
+
+
+    /*
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    font-size: 1.8rem;
+    margin-top: 30px;
+    */
+
+
+    letter-spacing: 3px;
+
+    width: 150px;
+    /*color: #ff7d54;*/
+    /*color: #fe9730;*/
+    color: rgb(255, 125, 84);
+    /*color: #535353;*/
+}
+
+#sub-header p{
+
+    margin:0;
+    margin-top: 2px;
+    margin-left: 30px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    letter-spacing: 4px;
+
+    font-size: 0.65rem;
+    width: 140px;
+    color: #949494;
+}
+
+#sub-header{
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+#menuElements{
+    position: relative;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+.heading{
+    position: relative;
+    margin-left: 30px;
+    margin-top: 30px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    letter-spacing: 2px;
+    font-size: 0.70rem;
+    color: #4b4b4b;
+
+}
+
+a{
+    text-decoration: none;
+    color: #646464;
+    -o-transition:.2s;
+    -moz-transition:.2s;
+    -webkit-transition:.2s;
+    transition:.2s;
+
+}
+
+a:hover{
+    color: rgb(255, 125, 84) !important;
+    border-bottom: none;
+    text-decoration: none;
+
+    -o-transition:.2s;
+    -moz-transition:.2s;
+    -webkit-transition:.2s;
+    transition:.2s;
+}
+
+#mainContent a{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    -o-transition:.2s;
+    -moz-transition:.2s;
+    -webkit-transition:.2s;
+    transition:.2s;
+}
+
+#mainContent a:hover{
+    color: rgb(255, 125, 84) !important;
+    border-bottom: none;
+    text-decoration: none;
+
+    -o-transition:.2s;
+    -moz-transition:.2s;
+    -webkit-transition:.2s;
+    transition:.2s;
+}
+
+ul {
+    margin-top: 15px;
+    list-style-type:none;
+    padding:0;
+}
+
+.heading li {
+    margin-bottom: 15px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+}
+
+li a{
+    color: #2e2e2e;
+    text-decoration: none;
+
+}
+
+/* ////////////////////// */
+
+/* CONTAINER STYLING */
+
+#mainContent{
+    position: absolute;
+    margin-left: 300px;
+    margin-top: 70px;
+}
+
+/*Exception padding for usage and documentation pages*/
+
+#mainContent #usage {
+    padding-bottom: 70px;
+}
+
+#mainContent #documentation {
+    padding-bottom: 70px;
+}
+
+#intro{
+
+    margin:0;
+
+}
+
+.contentHeader{
+
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    color: #535353;
+    letter-spacing: 2px;
+    font-size: 1.5rem
+}
+
+#mainContent .miniContentHeader{
+
+    margin-top: 30px;
+    margin-bottom: -10px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    color: #535364;
+    font-size: 1.1rem;
+    letter-spacing: .05rem;
+
+}
+
+#mainContent p b{
+    margin: 0;
+    margin-top: 15px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.02rem;
+    color: #727272;
+    line-height: 1.6;
+}
+
+.contentText{
+    position: relative;
+    margin-top: 20px;
+    color: #646464;
+    width: 700px;
+}
+
+.contentText p{
+    margin: 0;
+    margin-top: 15px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    letter-spacing: 0.02rem;
+    color: #646464;
+    line-height: 1.7;
+}
+
+/* ////////////////////// */
+
+/* FILE INPUT STYLING */
+
+.button {
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.button + label {
+    padding: 2px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 0.90rem;
+    letter-spacing: 1px;
+
+    color: rgb(255, 125, 84);
+    background-color: #f9f9f9;
+    display: inline-block;
+    -o-transition:.2s;
+    -ms-transition:.2s;
+    -moz-transition:.2s;
+    -webkit-transition:.2s;
+    transition:.2s;
+}
+
+.button:focus + label,
+.button + label:hover {
+    color: rgb(255, 125, 84);
+    background-color: #f0f0f0;
+    -o-transition:.2s;
+    -moz-transition:.2s;
+    -webkit-transition:.2s;
+    transition:.2s;
+}
+
+.button:active + label{
+    background-color: #e7e7e7;
+}
+
+.button + label {
+    cursor: pointer; /* "hand" cursor */
+}
+
+.button:disabled + label{
+    color: rgba(255, 125, 84, 0.21);
+    background-color: #f9f9f9;
+    -o-transition:.2s;
+    -moz-transition:.2s;
+    -webkit-transition:.2s;
+    transition:.2s;
+}
+
+/* ////////////////////// */
+
+#dataSculpture{
+    margin-top: -55px;
+}
+#dataSign{
+    margin-top: -55px;
+}
+
+/* ///////////////////////// */
+
+.checkbox{
+    width: 30px;
+    height: 30px;
+    background-color: red;
+}

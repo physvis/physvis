@@ -1,0 +1,201 @@
+.button_custom {
+    background-color: #e4e4e4;
+    border: none;
+    color: #ffffff;
+    height: 550px;
+    width: 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    cursor: pointer;
+    margin-left: 0px;
+    opacity: 0.7;
+    -o-transition:.2s;
+    -ms-transition:.2s;
+    -moz-transition:.2s;
+    -webkit-transition:.2s;
+    transition:.2s;
+}
+
+.button_custom:hover{
+    opacity: 1;
+    -o-transition:.2s;
+    -ms-transition:.2s;
+    -moz-transition:.2s;
+    -webkit-transition:.2s;
+    transition:.2s;
+}
+
+.button_custom:focus {
+    outline:0;
+}
+
+#gui{
+    position: relative;
+    margin-top: -5px;
+}
+
+.attributeInput{
+    -webkit-transition: all 0.15s ease-in-out;
+    -moz-transition: all 0.15s ease-in-out;
+    -ms-transition: all 0.15s ease-in-out;
+    -o-transition: all 0.15s ease-in-out;
+    outline: none;
+    padding: 3px 0px 3px 3px;
+    margin: 5px 1px 3px 0px;
+    border: 1px solid #DDDDDD;
+    border-radius: 2px;
+    color: #767676;
+}
+
+.attributeInput:focus {
+    box-shadow: 0 0 5px #ff9744;
+    padding: 3px 0px 3px 3px;
+    margin: 5px 1px 3px 0px;
+    border: 1px solid #ff9744;
+    border-radius: 2px;
+}
+
+.attributeInput::selection{
+    background-color: rgba(255, 151, 68, 0.15);
+}
+
+.checkBox{
+    margin-right: 5px;
+}
+
+#buttonsSign{
+    margin-bottom: 5px;
+}
+
+#sliderBar{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#controllers{
+    display:none;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    position: absolute;
+    background-color: #fafafa;
+    margin-left: 660px;
+    overflow: auto;
+}
+
+#attributeList {
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    position: relative;
+    background-color: #fafafa;
+    margin-top: -15px;
+    /*overflow: auto;*/
+}
+
+
+#container{
+    width: 650px;
+    height: 550px;
+    position: relative;
+    overflow: hidden;
+    background-image: url('blueprint2.jpg');
+    opacity: 0.6;
+    margin-bottom: 5px;
+}
+
+#prev{
+    margin-left: 0px;
+    display:none;
+    font-size: 25px;
+}
+
+#next{
+    display:none;
+    float: right;
+    font-size: 25px;
+}
+
+#content{
+    position: absolute;
+    display: flex;
+    width: 580px;
+    height: 550px;
+    margin-left: 35px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 26px;
+    color: rgba(119, 119, 119, 1);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+}
+
+#number{
+    position: absolute;
+    width: 50px;
+    height:30px;
+    margin-top: 515px;
+    margin-left: 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    color: #7d7d7d;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+/*
+#canvasContent{
+    width: 530px;
+    height: 530px;
+    margin-left: 60px;
+    margin-top: 10px;
+    position: absolute;
+
+}
+*/
+
+#myProgress {
+    position: relative;
+    width: 650px;
+    height: 30px;
+    background-color: #f4f4f4;
+    margin-bottom: 10px;
+}
+#myBar {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background-color: #ff981a;
+}
+
+label[for=refresh] {
+    position: relative;
+}
+
+svg {
+    width: 530px;
+    height: 530px;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+
+}
+
+svg path{
+    stroke-width: 0.9;
+    stroke-opacity: 1;
+    stroke: #a9a9a9;
+}

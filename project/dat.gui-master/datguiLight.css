@@ -1,0 +1,126 @@
+/*
+* A custom white theme for dat.gui by @liabru
+* http://brm.io/
+* License: MIT
+*/
+
+body .dg .c,
+body .dg .cr.function,
+body .dg .c select,
+body .dg .property-name,
+body .dg .title {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+body .dg.main.taller-than-window .close-button {
+    border-top: 1px solid #ddd;
+}
+
+body .dg.main .close-button {
+    background-color: #ebebeb;
+}
+
+body .dg.main .close-button:hover {
+    background-color: #f4f4f4;
+}
+
+body .dg {
+    color: #555;
+    text-shadow: none !important;
+}
+
+body .dg.main::-webkit-scrollbar {
+    background: #fafafa;
+}
+
+body .dg.main::-webkit-scrollbar-thumb {
+    background: #bbb;
+}
+
+body .dg li:not(.folder) {
+    background: #fafafa;
+    border-bottom: 1px solid #ddd;
+}
+
+body .dg li.save-row .button {
+    text-shadow: none !important;
+}
+
+body .dg li.title {
+    background: #e8e8e8 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;
+}
+
+body .dg li.folder {
+    border-left: 0;
+}
+
+body .dg .cr.function:hover,
+body .dg .cr.boolean:hover {
+    background: #fff;
+}
+
+body .dg .c input[type=text] {
+    background: #e9e9e9;
+}
+
+body .dg .c input[type=text]:hover {
+    background: #eee;
+}
+
+body .dg .c input[type=text]:focus {
+    background: #eee;
+    color: #555;
+}
+
+body .dg .c .slider {
+    background: #e9e9e9;
+}
+
+body .dg .c .slider:hover {
+    background: #eee;
+}
+
+body .dg.a {
+    margin-right: 9px;
+    margin-top: 9px;
+}
+
+body .dg .cr.function {
+    background: #eee;
+}
+
+body .dg .cr.function:hover {
+    background: #dadada;
+    border-bottom: 1px solid #bdbdbd;
+}
+
+body .dg .cr.function:active {
+    background: #ddd;
+    border-bottom: 1px solid #bdbdbd;
+}
+
+body .dg .c .slider-fg {
+    background: #ff9744;
+    max-width: 100%;}
+
+body .dg .c .slider:hover .slider-fg {
+    background: rgba(255, 150, 69, 0.85);}
+
+body .dg .cr.number input[type=text] {
+    color: #ff9744; }
+
+body .dg .cr.number {
+    border-left: 3px solid #858585;}
+
+body .dg .cr.boolean {
+    border-left: 3px solid #afafaf; }
+
+body .dg.main .close-button {
+    display:none;
+}

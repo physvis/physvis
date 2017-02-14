@@ -1,0 +1,37 @@
+#content3D {
+    background-color: #f4f4f4;
+    width: 650px;
+    height: 550px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    color: rgba(119, 119, 119, 0.6);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+}
+
+#buttons{
+    width: 500px;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+#gui3D{
+    position: relative;
+    background-color: #ffffff;
+}
+
+.flex{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.flex div{
+    flex: 0 0 auto;
+}
+
+.flex #gui3D{
+    margin-left: 10px;
+}
+

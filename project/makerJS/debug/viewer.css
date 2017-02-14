@@ -1,0 +1,99 @@
+﻿html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+body {
+    overflow-y: scroll;
+}
+#paramBar {
+    position: absolute;
+    width: 140px;
+    top: 70px;
+    right: 35px;
+
+}
+#params input {
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;
+    margin-top: 8px;
+    padding: 0;
+}
+#view {
+    background-color: #317CCF;
+    position: fixed;
+    top: 70px;
+    bottom: 60px;
+    left: 20px;
+    right: 210px;
+    overflow: hidden;
+}
+svg, .svg-zone {
+    height: 100%;
+    width: 100%;
+}
+svg line, svg circle, svg path {
+    stroke: #fff;
+    stroke-width: 2;
+    fill: none;
+}
+#svg-guides svg line, #crosshairs-vertical, #crosshairs-horizontal {
+    stroke: #4DD2FF;
+    stroke-width: 1;
+}
+#svg-pan-zoom-controls .svg-pan-zoom-control-background {
+    fill: none;
+}
+#svg-pan-zoom-controls path {
+    stroke-width: 0;
+    fill: #fff;
+    opacity: 1;
+}
+svg text {
+    fill: #0ff;
+}
+.optionpanel {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    right: 20px;
+    white-space: nowrap;
+}
+.optionpanel a {
+    background-color: #ccc;
+    color: #fff;
+    padding: 4px 10px;
+    text-decoration: none;
+}
+.optionpanel label {
+    margin-left: 20px;
+}
+.logo {
+    position: fixed;
+    top: 14px;
+    left: 20px;
+    font-size: 24px;
+    font-weight: normal;
+    color: #aaa;
+    line-height: 18px;
+    letter-spacing: 6px;
+    text-transform: lowercase;
+}
+.logo img {
+    margin-bottom: -3px;
+}
+.selectModelCode {
+    position: fixed;
+    top: 34px;
+    right: 210px;
+}
+.selectModelCode * {
+    font-size: 18px;
+    font-weight: 200;
+}
+
+#crosshairs-horizontal_text, #crosshairs-vertical_text {
+    display: none;
+}

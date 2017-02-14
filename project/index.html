@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="shortcut icon" href="favicon.ico" />
+
+    <meta charset="UTF-8">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,600,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+    <link href="mainStyle.css" rel="stylesheet" type="text/css">
+    <link href="dataScupltureStyle.css" rel="stylesheet" type="text/css">
+    <link href="dataSignsStyle.css" rel="stylesheet" type="text/css">
+    <link href="rangeStyle.css" rel="stylesheet" type="text/css">
+    <link href="dat.gui-master/datguiLight.css" rel="stylesheet" type="text/css">
+
+    <script src="makerJS/target/js/browser.maker.js" type="text/javascript"></script>
+
+    <script src="threeJS/three.min.js"></script>
+    <!--<script src="externalLibs/mod3.bundle.js"></script>-->
+    <!--<script src="threeJS/Three.js"></script>-->
+    <script src="externalLibs/TrackballControls.js"></script>
+
+    <script src="PapaParse/papaparse.js"></script>
+    <script src="externalLibs/STLExporter.js"></script>
+    <script src="externalLibs/FileSaver.js"></script>
+    <script src="externalLibs/Blob.js"></script>
+    <script src="opentypeJS/dist/opentype.js"></script>
+    <script src="bezierJS/bezier.js"></script>
+    <!--<script src="https://www.promisejs.org/polyfills/promise-7.0.4.min.js"></script>-->
+    <script src="drawingLibraryFinal.js"></script>
+    <script src="dat.gui-master/build/dat.gui.js"></script>
+    <script src="jszip/dist/jszip.min.js"></script>
+    <script src="externalLibs/jspdf.js"></script>
+    <!--<script src="externalLibs/ThreeCSG.js"></script>-->
+    <!--<script src="externalLibs/modifiers/BendModifier.js"></script>-->
+
+    <!--<script src="externalLibs/classy.js"></script>-->
+
+
+    <title>PhysVis</title>
+</head>
+<body>
+
+<div id="mainContainer">
+
+    <div id="sideBar">
+
+        <a class="logoLink" href="#">
+            <div id="header">
+
+                <div id="logo"></div>
+
+                <p id="main-header">PhysVis</p>
+
+                <div id="sub-header">
+                    <p>PHYSICAL</p> <p>DATA</p> <p>VISUALISATION</p> <p>TOOL</p>
+                </div>
+
+            </div>
+        </a>
+
+        <div id="menuElements">
+
+            <h1 class="heading">START HERE
+                <ul>
+                    <li><a class="usageLink" href="#">USAGE</a></li>
+
+                </ul>
+            </h1>
+
+            <h1 class="heading">MODELS
+                <ul>
+                    <li><a id="dsSideLink" class="dsLink" href="#">DATA TOWER</a></li>
+                    <li><a id="dsiSideLink" class="dsiLink" href="#">DATA CIRCLES</a></li>
+                </ul>
+            </h1>
+
+            <h1 class="heading">LINKS
+                <ul>
+                    <li><a href="" target="_blank">GITHUB</a></li>
+                    <li><a class="docLink" href="#">DOCUMENTATION</a></li>
+                </ul>
+            </h1>
+
+        </div>
+
+    </div>
+
+    <div id="mainContent">
+
+        <div id="intro">
+
+            <h1 class="contentHeader" id="introHeader">INTRO</h1>
+            <div class= "contentText" id="introText">
+                <p>PhysVis is a quick visualisation tool for converting your numeric data set(s) into physical objects with the minimum effort.</p>
+                <p>Start with the <a class="usageLink" href="#">usage</a> page for detailed information on how to use it.</p>
+                <p>We advise you to use <a href="https://www.google.com/chrome/" target="_blank"> Chrome Web Browser</a> for the best experience. Otherwise some crucial features, such as download functionality, might not work properly on other browsers.</p>
+                <br> </br>
+                <noscript>
+                    <p class="noJS">Upss! We detected that <i>JavaScript</i> is not enabled in your browser.</p>
+                    <p class="noJS">For a proper functionality, make sure that <i>JavaScript</i> is <a href="http://enable-javascript.com">enabled</a> in your browser.</p>
+                </noscript>
+            </div>
+
+        </div>
+
+        <div id="usage" style="display: none;">
+
+            <h1 class="contentHeader" id="usageHeader">USAGE</h1>
+            <div class= "contentText" id="usageText">
+                <p>PhysVis offers two different visualisation methods to choose between; <a class="dsLink" href="#">Data Tower</a> or <a class="dsiLink" href="#">Data Circles</a>.</p>
+                <p><a class="dsLink" href="#">Data Tower</a> is a 3D model generated in the file format of .stl to be printed with a 3D Printer and <a class="dsiLink" href="#">Data Circles</a> is a 2D model generated in the file format of .dxf to be CNC machined or laser cut.</p>
+
+                <p class="miniContentHeader">Getting Started</p>
+
+                <p>Use the "Models" section on the side-bar for accessing to the specific visualization tool.</p>
+                <p></p>
+                &#9679; Use the &nbsp;<p style="background-color: #f9f9f9; color: rgb(255, 125, 84); display: inline;">CHOOSE A FILE</p>&nbsp; button for selecting a valid CSV file to upload.
+                <p></p>
+                &#9679; Once you select a valid CSV file, use the &nbsp;<p style="background-color: #f9f9f9; color: rgb(255, 125, 84); display: inline;">UPLOAD</p>&nbsp; button to visualize the data.
+                <p></p>
+                &#9679; You can use the &nbsp;<p style="background-color: #f9f9f9; color: rgb(255, 125, 84); display: inline;">CLEAR</p>&nbsp; button to terminate the session and select another CSV file.
+                <p></p>
+                &#9679; Use the &nbsp;<p style="background-color: #f9f9f9; color: rgb(255, 125, 84); display: inline;">SAVE</p>&nbsp; button to initiate the download process for generated physical visualization files.
+
+
+
+
+                <p class="miniContentHeader">CSV File Formatting</p>
+                <p><b>Example CSV files to test:</b> <a href="csvExamples/dataTower.csv">Data Tower</a> | <a href="csvExamples/dataCircles.csv">Data Circles</a></p>
+                <p>PhysVis accepts a CSV file as a data input. The data should be in the given specific formatting to be able to be used with PhysVis. The instructions on specifications of the formatting as follows;</p>
+                <p>An example CSV file is shown below.</p>
+                <p><table style="width:50%">
+                  <tr>
+                    <td><b>auto</b></td>
+                    <td><b>Data1</b></td>
+                    <td><b>Data2</b></td>
+                    <td><b>Data3</b></td>
+                    <td><b>Data4</b></td>
+
+                  </tr>
+                <tr>
+                    <td><b>2000</b></td>
+                    <td>0.185</td>
+                    <td>0.440</td>
+                    <td>0.488</td>
+                    <td>0.357</td>
+                </tr>
+                <tr>
+                    <td><b>2001</b></td>
+                    <td>0.385</td>
+                    <td>0.314</td>
+                    <td>0.308</td>
+                    <td>0.317</td>
+                </tr>
+                <tr>
+                    <td><b>2002</b></td>
+                    <td>0.124</td>
+                    <td>0.345</td>
+                    <td>0.440</td>
+                    <td>0.528</td>
+                </tr>
+                <tr>
+                    <td><b>2003</b></td>
+                    <td>0.932</td>
+                    <td>0.205</td>
+                    <td>0.440</td>
+                    <td>0.688</td>
+                </tr>
+                <tr>
+                    <td><b>2004</b></td>
+                    <td>0.185</td>
+                    <td>0.343</td>
+                    <td>0.628</td>
+                    <td>0.357</td>
+                </tr>
+                <tr>
+                    <td><b>2005</b></td>
+                    <td>0.305</td>
+                    <td>0.100</td>
+                    <td>0.488</td>
+                    <td>0.437</td>
+                </tr>
+            </table></p>
+                <p>First row of the CSV file contains the identifier and data names.</p>
+                <p><table style="width:50%">
+                  <tr>
+                    <td><b>auto</b></td>
+                    <td><b>Data1</b></td>
+                    <td><b>Data2</b></td>
+                    <td><b>Data3</b></td>
+                    <td><b>Data4</b></td>
+                  </tr>
+
+            </table></p>
+                <p>First column contains the name of each variable.</p>
+                <p><table style="width:7%">
+                 
+                <tr><td><b>2000</b></td></tr>
+                <tr><td><b>2001</b></td></tr>
+                <tr><td><b>2002</b></td></tr>
+                <tr><td><b>2003</b></td></tr>
+                <tr><td><b>2004</b></td></tr>
+                <tr><td><b>2005</b></td></tr>
+
+            </table></p>
+
+                <p>Identifier helps specifiying the lower and upper limits of data sets. Identifier can only be <b>'auto'</b>, <b>'manual'</b> or <b>'%'</b>.</p>
+                <p>For limits to be automatically determined, <b>'auto'</b> option is used. In order to specify the limits manually, <b>'manual'</b> option can be used. However, that requires additional rows in the CSV data.</p>
+                <p><table style="width:50%">
+                  <tr>
+                    <td><b>manual</b></td>
+                    <td><b>Data1</b></td>
+                    <td><b>Data2</b></td>
+                    <td><b>Data3</b></td>
+                    <td><b>Data4</b></td>
+
+                  </tr>
+                <tr>
+                    <td><b>2000</b></td>
+                    <td>0.185</td>
+                    <td>0.440</td>
+                    <td>0.488</td>
+                    <td>0.357</td>
+                </tr>
+                <tr>
+                    <td><b>2001</b></td>
+                    <td>0.385</td>
+                    <td>0.314</td>
+                    <td>0.308</td>
+                    <td>0.317</td>
+                </tr>
+                <tr>
+                    <td><b>2002</b></td>
+                    <td>0.124</td>
+                    <td>0.345</td>
+                    <td>0.440</td>
+                    <td>0.528</td>
+                </tr>
+                <tr>
+                    <td><b>2003</b></td>
+                    <td>0.932</td>
+                    <td>0.205</td>
+                    <td>0.440</td>
+                    <td>0.688</td>
+                </tr>
+                <tr>
+                    <td><b>2004</b></td>
+                    <td>0.185</td>
+                    <td>0.343</td>
+                    <td>0.628</td>
+                    <td>0.357</td>
+                </tr>
+                <tr>
+                    <td><b>2005</b></td>
+                    <td>0.305</td>
+                    <td>0.100</td>
+                    <td>0.488</td>
+                    <td>0.437</td>
+                </tr>
+
+                <tr>
+                    <td><b>Lower</b></td>
+                    <td>0.124</td>
+                    <td>0.100</td>
+                    <td>0.308</td>
+                    <td>0.317</td>
+                </tr>
+
+                <tr>
+                    <td><b>Upper</b></td>
+                    <td>0.932</td>
+                    <td>0.440</td>
+                    <td>0.628</td>
+                    <td>0.688</td>
+                </tr>
+            </table></p>
+                <p>Using <b>'%'</b> indicates that the given data sets contain percentages and therefore lower and upper limits are automatically set to <b>'0'</b> and <b>'100'</b> respectively.</p>
+                <p><table style="width:50%">
+                  <tr>
+                    <td><b>%</b></td>
+                    <td><b>Data1</b></td>
+                    <td><b>Data2</b></td>
+                    <td><b>Data3</b></td>
+                    <td><b>Data4</b></td>
+
+                  </tr>
+                <tr>
+                    <td><b>2000</b></td>
+                    <td>22</td>
+                    <td>34</td>
+                    <td>23</td>
+                    <td>56</td>
+                </tr>
+                <tr>
+                    <td><b>2001</b></td>
+                    <td>90</td>
+                    <td>34</td>
+                    <td>38</td>
+                    <td>17</td>
+                </tr>
+                <tr>
+                    <td><b>2002</b></td>
+                    <td>24</td>
+                    <td>45</td>
+                    <td>44</td>
+                    <td>98</td>
+                </tr>
+                <tr>
+                    <td><b>2003</b></td>
+                    <td>93</td>
+                    <td>20</td>
+                    <td>40</td>
+                    <td>68</td>
+                </tr>
+                <tr>
+                    <td><b>2004</b></td>
+                    <td>85</td>
+                    <td>43</td>
+                    <td>62</td>
+                    <td>57</td>
+                </tr>
+                <tr>
+                    <td><b>2005</b></td>
+                    <td>35</td>
+                    <td>10</td>
+                    <td>4</td>
+                    <td>37</td>
+                </tr>
+            </table></p>
+                <p>A CSV file can be created with a simple text editor or various online tools can be utilized. For further information on CSV file format, refer to <a href="https://en.wikipedia.org/wiki/Comma-separated_values" target="_blank"> Wikipedia page</a> of Comma-separated values (CSV).</p>
+            </div>
+
+        </div>
+
+        <div id="dataSculpture" style="display: none;">
+
+            <!--<h1 class="contentHeader" id="dsHeader">DATA SCULPTURE</h1>-->
+            <div class= "contentText" id="dsText"></div>
+
+            <div id="buttons">
+                <input type="file" name="file" id="file3D" class="button">
+                <label id="label3DFile" for="file3D">CHOOSE A FILE</label>
+                &nbsp|&nbsp
+                <button class="button" id="up" disabled=true>Upload</button>
+                <label for="up">UPLOAD</label>
+                &nbsp|&nbsp
+                <button class="button" id="clear" disabled=true>Clear</button>
+                <label for="clear">CLEAR</label>
+                &nbsp|&nbsp
+                <button class="button" id="save-btn" disabled= true>Save</button>
+                <label for="save-btn">SAVE</label>
+            </div>
+
+            <section class="flex">
+
+                <div id="content3D"></div>
+                <div id="gui3D"></div>
+
+            </section>
+
+
+
+        </div>
+
+        <div id="dataSign" style="display: none;">
+
+            <!--<h1 class="contentHeader" id="dsiHeader">DATA SIGN</h1>-->
+            <div class= "contentText" id="dsiText"></div>
+
+            <div id="buttonsSign">
+                <input type="file" name="file" id="fileSign" class="button">
+                <label id="labelSignFile" for="fileSign">CHOOSE A FILE</label>
+                &nbsp|&nbsp
+                <button class="button" id="upSign" disabled=true>Upload</button>
+                <label for="upSign">UPLOAD</label>
+                &nbsp|&nbsp
+                <button class="button" id="clearSign" disabled= true>Clear</button>
+                <label for="clearSign">CLEAR</label>
+                &nbsp|&nbsp
+                <button class="button" id="save-btnSign" disabled= true>Save</button>
+                <label for="save-btnSign">SAVE</label>
+
+            </div>
+
+            <div id="controllers">
+
+                <input type="range" id="sliderBar" min=0 max= 0 value="1">
+                <p><div id="attributeList"></div></p>
+                <p>
+                    <button id="refresh" class="button"></button>
+                    <label for="refresh">APPLY</label>
+                </p>
+                <div id="gui"></div>
+
+            </div>
+
+            <div id="container">
+
+                <div id="number"></div>
+                <div id="content"></div>
+
+                <button class="button_custom" id="next">&#10095</button>
+                <button class="button_custom" id="prev">&#10094</button>
+
+
+            </div>
+
+            <!--
+            <div id="myProgress">
+                <div id="myBar"></div>
+            </div>-->
+
+        </div>
+
+        <div id="documentation" style="display: none;">
+
+            <h1 class="contentHeader" id="docHeader">DOCUMENTATION</h1>
+            <div class= "contentText" id="docText">
+                <p>Nothing is here yet</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script type="text/javascript" src="dataArrange.js"></script>
+<script type="text/javascript" src="CSVparsing3D.js"></script>
+<script type="text/javascript" src="CSVparsingLaser.js"></script>
+<script type="text/javascript" src="dataSculpture.js"></script>
+<script type="text/javascript" src="laserModel.js"></script>
+
+<script>
+
+    //Side menu Links
+    var logoLink = document.getElementsByClassName('logoLink');
+    var usageLink = document.getElementsByClassName('usageLink');
+    var dsLink = document.getElementsByClassName('dsLink');
+    var dsiLink = document.getElementsByClassName('dsiLink');
+    var docLink = document.getElementsByClassName('docLink');
+
+    //Content DIVS
+    var introContent = document.getElementById('intro');
+    var usageContent = document.getElementById('usage');
+    var dsContent = document.getElementById('dataSculpture');
+    var dsiContent = document.getElementById('dataSign');
+    var docContent = document.getElementById('documentation');
+
+    var contentArray = [introContent,usageContent,dsContent,dsiContent,docContent];
+
+
+    var dsSideLink = document.getElementById('dsSideLink');
+    var dsiSideLink = document.getElementById('dsiSideLink');
+
+
+    //Hides all the content DIVs except the selected one
+    function hideAllbutOne(array,select)
+    {
+        for(var i=0; i<array.length; i++)
+        {
+            if(i != select)
+            {
+                array[i].style.display = "none";
+            }
+            else
+            {
+                array[i].style.display = "";
+            }
+        }
+    }
+
+    //Start the page with intro
+    hideAllbutOne(contentArray,0);
+
+    //Intro Links
+    for(var i = 0; i<logoLink.length; i++)
+    {
+        logoLink[i].addEventListener("click", function()
+        {
+            hideAllbutOne(contentArray,0);
+
+            ////////////
+            dsSideLink.style.color = '#2e2e2e';
+            dsSideLink.style.textDecoration = 'none';
+            dsiSideLink.style.color = '#2e2e2e';
+            dsiSideLink.style.textDecoration = 'none';
+            ////////////
+        });
+    }
+
+    //Usage Links
+    for(var i = 0; i<usageLink.length; i++)
+    {
+        usageLink[i].addEventListener("click", function()
+        {
+            hideAllbutOne(contentArray,1);
+
+            ////////////
+            dsSideLink.style.color = '#2e2e2e';
+            dsSideLink.style.textDecoration = 'none';
+            dsiSideLink.style.color = '#2e2e2e';
+            dsiSideLink.style.textDecoration = 'none';
+            ////////////
+        });
+    }
+
+    //DataSculpture Links
+    for(var i = 0; i<dsLink.length; i++)
+    {
+        dsLink[i].addEventListener("click", function()
+        {
+            hideAllbutOne(contentArray,2);
+        });
+
+        dsLink[i].addEventListener('click',function () {
+            dsSideLink.style.color = '#ff8b56';
+            dsSideLink.style.textDecoration = 'none';
+
+            dsiSideLink.style.color = '#2e2e2e';
+            dsiSideLink.style.textDecoration = 'none';
+        });
+    }
+
+    //DataSign Links
+    for(var i = 0; i<dsiLink.length; i++)
+    {
+        dsiLink[i].addEventListener("click", function()
+        {
+            hideAllbutOne(contentArray,3);
+        });
+
+        dsiLink[i].addEventListener('click',function () {
+            dsiSideLink.style.color = '#ff8b56';
+            dsiSideLink.style.textDecoration = 'none';
+
+            dsSideLink.style.color = '#2e2e2e';
+            dsSideLink.style.textDecoration = 'none';
+        });
+    }
+
+    //Documentation Links
+    for(var i = 0; i<docLink.length; i++)
+    {
+        docLink[i].addEventListener("click", function()
+        {
+            hideAllbutOne(contentArray,4);
+
+            ////////////
+            dsSideLink.style.color = '#2e2e2e';
+            dsSideLink.style.textDecoration = 'none';
+            dsiSideLink.style.color = '#2e2e2e';
+            dsiSideLink.style.textDecoration = 'none';
+            ////////////
+        });
+    }
+
+</script>
+
+</body>
+</html>
