@@ -360,8 +360,8 @@
                 var numOfObj = name.length;
 
                 var cylinderGeoBase = new THREE.CylinderGeometry(baseCircleRadius,baseCircleRadius, thicknessOfMat, segment, 1, false, 0, 2*Math.PI);
-                var cylinderGeo1 = new THREE.CylinderGeometry(baseCircleRadius/12 - margin ,baseCircleRadius/12 - margin, thicknessOfMat*numOfObj + 1, 256, 1, true, 0, 2*Math.PI);
-                var cylinderGeo2 = new THREE.CylinderGeometry(baseCircleRadius/12 - margin ,baseCircleRadius/12 - margin, thicknessOfMat*numOfObj + 1, 256, 1, true, 0, 2*Math.PI);
+                var cylinderGeo1 = new THREE.CylinderGeometry(baseCircleRadius/12 - margin ,baseCircleRadius/12 - margin, thicknessOfMat*numOfObj + 3, 256, 1, true, 0, 2*Math.PI);
+                var cylinderGeo2 = new THREE.CylinderGeometry(baseCircleRadius/12 - margin ,baseCircleRadius/12 - margin, thicknessOfMat*numOfObj + 3, 256, 1, true, 0, 2*Math.PI);
                 var cylinderCap1 = new THREE.CircleGeometry(baseCircleRadius/12 - margin, segment);
                 var cylinderCap2 = new THREE.CircleGeometry(baseCircleRadius/12 - margin, segment);
 
@@ -374,13 +374,13 @@
 
                 cylinderGeo1Mesh.position.setZ(-baseCircleRadius/2);
                 cylinderGeo2Mesh.position.setZ(baseCircleRadius/2);
-                cylinderGeo1Mesh.position.setY((thicknessOfMat*numOfObj + 1)/2 + thicknessOfMat/2);
-                cylinderGeo2Mesh.position.setY((thicknessOfMat*numOfObj + 1)/2 + thicknessOfMat/2);
+                cylinderGeo1Mesh.position.setY((thicknessOfMat*numOfObj + 3)/2 + thicknessOfMat/2);
+                cylinderGeo2Mesh.position.setY((thicknessOfMat*numOfObj + 3)/2 + thicknessOfMat/2);
 
                 cylinderCap1Mesh.position.setZ(-baseCircleRadius/2);
                 cylinderCap2Mesh.position.setZ(baseCircleRadius/2);
-                cylinderCap1Mesh.position.setY(thicknessOfMat/2 + (thicknessOfMat*numOfObj + 1));
-                cylinderCap2Mesh.position.setY(thicknessOfMat/2 + (thicknessOfMat*numOfObj + 1));
+                cylinderCap1Mesh.position.setY(thicknessOfMat/2 + (thicknessOfMat*numOfObj + 3));
+                cylinderCap2Mesh.position.setY(thicknessOfMat/2 + (thicknessOfMat*numOfObj + 3));
                 cylinderCap1Mesh.rotation.x = -Math.PI/2;
                 cylinderCap2Mesh.rotation.x = -Math.PI/2;
 
